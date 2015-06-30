@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <head>
-   <title>Music search with Spotify</title>
+   <title>Search tweets of your favorite users</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="css/style.css"/>
    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
-<body ng-app="Spotify">
+<body ng-app="Twitter">
    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
          <div class="navbar-header">
             <ul class="nav navbar-nav">
-               <li ui-sref="flashCard" class="navbar-brand"><img class="ofCourse" src="images/puppy.gif" />SoNas</li>
+               <li class="navbar-brand"><img class="ofCourse" src="images/puppy.gif" />Home</li>
             </ul>
          </div>
       </div>
    </nav>
    <div ng-controller="MainController">
    <div class="container">
-      <form ng-submit="submit(artist)">
+      <form ng-submit="submit(user)">
          <div class="jumbotron">
-            <h1>Search for an Artist</h1>
-            <p class="instructions">Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
+            <h1>Search for a Twitter User</h1>
+            <p class="instructions">Type a Twitter Name and click on "Search". Enjoy their latest tweets</p>
             <div class="search-form">
                <div class="row">
                   <div class="col-lg-11">
                      <div class="input-group">
                         <span class="input-group-addon"><3</span>
-                        <input type="text" class="form-control"type="text" ng-model="artist" />
+                        <input type="text" class="form-control"type="text" ng-model="user" />
                      </div>
                   </div>
-                  <input type="submit" id="search" button type="button" class="btn btn-success" value="Search" />
+                  <input type="submit" id="search" button type="button" class="btn btn-default" value="Search" />
                </div>
             </div>
+         </div>
             <div class="results">
-               <div class="results" ng-repeat="album in albums">
-                  <p class="nameOfAlbum">{{ album.name }}</p>
-                  
-                  <img class="img-responsive img-home-portfolio" src={{album.images[0].url}} ng-click="getTrackPreview(album)"/>
+               <div class="results" ng-repeat="tweet in tweets">
+                  <div class="row">  
+                     <div class="col-md-3">
+                        <img class="img-responsive center-block userPhoto" src={{tweet.photo}} />   
+                     </div>
+                      <div class="col-md-9">
+                        <p class="userName">{{tweet.name}}: {{ tweet.text }}</p>
+                        <p class="datePosted">Date posted: {{tweet.date | filter: date }}</p>
+                     </div>
+                  </div>
               </div>
-              
             </div>
       </form>
-      </div>
    </div>
    <script src="angular/angular.min.js"></script>
    <script src="js/app.js"></script>
-   <script src="angular-audio/app/angular.audio.js"></script>
    <script src="js/controllers/MainController.js"></script>
-   <script src='js/factories/spotifyFactory.js'></script>
+   <script src='js/factories/twitterFactory.js'></script>
 </body>
 </html>

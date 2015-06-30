@@ -1,4 +1,10 @@
 module.exports = {
-client_ID: '7c5f0535e1f04228b0b36418588ec08a',
-client_Secret: '870751d3a06244a7b195f2d1204ab774'
+
+	twitter: {
+
+		consumer_key: 'dkfoOSxP6W3tJAhCj80xOeqwS',
+	    consumer_secret: 'FAigJ6T2ci47586wvc0Qm1KILIv1owoSL8TpivP4QiPw9tuW0l',
+	    access_token: '3222728733-SRhFgqxMvrrxfKo7ifcDGZiFj2nFaISHBfZTBke',
+	    access_token_secret: 'tUFEEQ8zzCDyems8bzIfsjzJzI1xqrxKAcsn9OuEwhdW5'
+	}
 };

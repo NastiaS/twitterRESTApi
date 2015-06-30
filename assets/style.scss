@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.userPhoto {
+	  margin: 5px 0 5px 100px;
+}
+
+.userName{
+	margin: 7px 0 5px 0;
+}
 h1 {
   font-family:'Pacifico', cursive;
   text-align: center;
@@ -24,5 +31,3 @@ img {
 	margin-top: -11px;
 }
 
-
-/*we should do carousel for the images*/

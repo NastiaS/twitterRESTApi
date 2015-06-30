@@ -1,1 +1,1 @@
-var app = angular.module('Spotify', ['ngAudio']);
+var app = angular.module('Twitter', []);
